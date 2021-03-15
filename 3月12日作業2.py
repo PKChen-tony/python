@@ -1,25 +1,24 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Mar 14 00:49:17 2021
+Created on Mon Mar 15 14:35:08 2021
 
 @author: TUF B360M-E
 """
 print("執行結果")
-i=int(input('請輸入利潤:'))
-earn=[1000000,600000,400000,200000,100000,0]
-rat=[0.01,0.015,0.03,0.05,0.075,0.1]
-bonus=0
-for m in range(len(earn)):
-    if i>earn[m]:
-        bonus+=(i-earn[m]*rat[m])
-        i=earn[m]
-print("奬金:",bonus)
-'''
+I = float(input("請輸入當月利潤,單位為萬元:"))
+bns = 0  
+cat = [100, 60, 40, 20, 10, 0]  
+pct = [0.01, 0.015, 0.03, 0.05, 0.075, 0.1]  
+for i in range(6):
+    if I > cat[i]:
+        I = I - cat[i]  
+        bns = bns + I * pct[i]  
+print('當月應發放奬金總數為%s萬元' % bns)
+"""
 執行結果
 
-請輸入利潤:150000
-奬金: 242500.0
-
-'''
-    
-
+請輸入當月利潤,單位為萬元:100000
+當月應發放奬金總數為27939.35萬元
+請輸入當月利潤,單位為萬元:150000
+當月應發放奬金總數為41939.35萬元
+"""
